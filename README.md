@@ -1,3 +1,0 @@
-# cv
-
-a React resume
