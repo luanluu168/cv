@@ -247,8 +247,8 @@ h1, h2, h3, h4, h5, h6 {
 #intro {
   width: 100%;
   height: 100vh;
-  /* background: url("../img/background.jpg") top right no-repeat; */
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/background.jpg");
+  background: url("../img/background.jpg") top right no-repeat;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/background.jpg"); */
   background-size: cover;
   position: relative;
 }
@@ -1276,4 +1276,20 @@ section {
   -webkit-transform: rotate(1080deg);
   -moz-transform: rotate(1080deg);
   transform: rotate(1080deg);
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+figcaption {
+  color: rgb(168, 168, 168);
+  font-weight: bold;
+  padding: 1px;
+  text-align: center;
+  font-size: 0.55rem;
+  margin-top: 2px;
 }
