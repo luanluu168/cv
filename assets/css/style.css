@@ -247,7 +247,8 @@ h1, h2, h3, h4, h5, h6 {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url("../img/background.jpg") top right no-repeat;
+  /* background: url("../img/background.jpg") top right no-repeat; */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/background.jpg");
   background-size: cover;
   position: relative;
 }
@@ -1268,30 +1269,11 @@ section {
 
 .spinner {
   transform-origin: center center;
-  -webkit-animation: spin 0.3s linear 2;
-  animation: spin 0.3s linear 2;
-}
-@-webkit-keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@-moz-keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  transition: transform 0.5s;
+
+  -webkit-transform: rotate(1080deg);
+  -moz-transform: rotate(1080deg);
+  transform: rotate(1080deg);
 }
