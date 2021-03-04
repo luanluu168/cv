@@ -1293,3 +1293,18 @@ figcaption {
   font-size: 0.55rem;
   margin-top: 2px;
 }
+
+
+#resume {
+  background: url("../img/resumeBg.png") top center no-repeat;
+  background-size: 235px;
+}
+#contact {
+  background: url("../img/greenBg.png") no-repeat;
+  background-size: 250px 150px;
+  background-position: 50% 12px;
+}
+#portfolio {
+  background: url("../img/birdBg.png") top center no-repeat;
+  background-size: 250px;
+}
