@@ -1367,6 +1367,3 @@ ul li:nth-child(9) figure .icon::after {
   animation: changeColor 30s linear infinite;
   -webkit-animation: changeColor 30s linear infinite;
 }
-ul li figure .icon .fas.fa-plus {
-  font-size: 9px;
-}
