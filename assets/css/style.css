@@ -1308,3 +1308,39 @@ figcaption {
   background: url("../img/birdBg.png") top center no-repeat;
   background-size: 270px;
 }
+
+ul li figure .icon {
+  width: 65px;
+  height: 65px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgb(168, 168, 168);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: -1px -1px 5px rgba(255, 255, 255, 0.5),
+  4px 4px 6px rgba(0, 0, 0, 0.2), inset -1px -1px 1px rgba(0, 0, 0, 0.1),
+  inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+ul li figure .icon {
+  color: cyan;
+  animation: changeColor 30s linear infinite;
+  -webkit-animation: changeColor 30s linear infinite;
+}
+@keyframes changeColor {
+  0%{
+    filter: hue-rotate(0deg);
+    -webkit-filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+    -webkit-filter: hue-rotate(360deg);
+  }
+}
+
+.wave {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  z-index: 0;
+}
