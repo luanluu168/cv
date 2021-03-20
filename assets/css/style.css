@@ -1350,6 +1350,8 @@ ul li figure .icon {
 /* wave for intro section  */
 .wave {
   position: absolute;
+  width: 100%;
+  height: auto;
   bottom: -40px;
   left: 0;
   z-index: 0;
