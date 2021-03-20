@@ -1358,12 +1358,16 @@ ul li figure .icon {
 }
 
 /* c++ */
-ul li:nth-child(9) figure .icon::after {
-  position: absolute;
-  top: calc(50% - 10px);
-  left: calc(100% - 18px);
+ul li:nth-child(9) figure .icon span::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   content: "++";
-  font-size: 11px;
+  margin: 0;
+  padding: 0;
+  width: 10px;
+  height: 10px;
+  font-size: 16px;
   font-weight: bold;
   color: cyan;
   animation: changeColor 30s linear infinite;
