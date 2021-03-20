@@ -1309,6 +1309,7 @@ figcaption {
   background-size: 270px;
 }
 
+/* container for fontawesome icon  */
 ul li figure .icon {
   width: 65px;
   height: 65px;
@@ -1322,6 +1323,14 @@ ul li figure .icon {
   4px 4px 6px rgba(0, 0, 0, 0.2), inset -1px -1px 1px rgba(0, 0, 0, 0.1),
   inset 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
+/* scale when hover  */
+ul li figure .icon:hover {
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+/* auto change icon color  */
 ul li figure .icon {
   color: cyan;
   animation: changeColor 30s linear infinite;
@@ -1338,9 +1347,26 @@ ul li figure .icon {
   }
 }
 
+/* wave for intro section  */
 .wave {
   position: absolute;
   bottom: -40px;
   left: 0;
   z-index: 0;
+}
+
+/* c++ */
+ul li:nth-child(9) figure .icon::after {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(100% - 18px);
+  content: "++";
+  font-size: 14px;
+  font-weight: bold;
+  color: cyan;
+  animation: changeColor 30s linear infinite;
+  -webkit-animation: changeColor 30s linear infinite;
+}
+ul li figure .icon .fas.fa-plus {
+  font-size: 9px;
 }
