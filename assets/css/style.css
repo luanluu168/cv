@@ -475,6 +475,7 @@ section {
 # Resume
 --------------------------------------------------------------*/
 .resume .resume-title {
+  padding: 2px 10px;
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
@@ -1367,7 +1368,7 @@ ul li:nth-child(9) figure .icon span::before {
   padding: 0;
   width: 10px;
   height: 10px;
-  font-size: 16px;
+  font-size: calc(9px + 6 * ((100vw - 320px) / 680));
   font-weight: bold;
   color: cyan;
   animation: changeColor 30s linear infinite;
