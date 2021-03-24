@@ -247,8 +247,13 @@ h1, h2, h3, h4, h5, h6 {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url("../img/background.jpg") top right no-repeat;
+  /* background: url("../img/background.jpg") top right no-repeat; */
+  background: linear-gradient(rgba(34, 34, 238, 0.7), rgba(141, 141, 231, 0.7)), url("https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif") top right no-repeat;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://media.giphy.com/media/4H3Ii5eLChYul9p7NL/giphy.gif") no-repeat center center fixed; */
   /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/background.jpg"); */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   position: relative;
 }
@@ -1351,15 +1356,15 @@ ul li figure .icon:hover {
 /* auto change icon color  */
 ul li figure .icon {
   color: cyan;
-  animation: changeColor 30s linear infinite;
-  -webkit-animation: changeColor 30s linear infinite;
+  animation: changeColor 30s infinite ease-in-out;
+  -webkit-animation: changeColor 30s infinite ease-in-out;
 }
 @keyframes changeColor {
   0%{
     filter: hue-rotate(0deg);
     -webkit-filter: hue-rotate(0deg);
   }
-  100%{
+  60%, 100%{
     filter: hue-rotate(360deg);
     -webkit-filter: hue-rotate(360deg);
   }
@@ -1463,6 +1468,11 @@ ul li:nth-child(9) figure .icon span::before {
   border-radius: 3px;
   letter-spacing: 1px;
   padding: 5px 10px;
+}
+.scene nav button:hover {
+  cursor: pointer;
+  background-color: #6c757d;
+  color: #fff;
 }
 @media (max-width: 992px) {
   .scene {

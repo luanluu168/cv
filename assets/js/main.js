@@ -231,6 +231,10 @@
         selectedIndex--;
         rotateCarousel(carousel, theta, selectedIndex);
     }
+    function handleCarouselCellIsClicked(e) {
+        selectedIndex = e.currentTarget.id;
+        rotateCarousel(carousel, theta, selectedIndex);
+    }
 
     prevButton.addEventListener( 'click', handlePreviousButtonIsClicked, true);
     nextButton.addEventListener( 'click', handleNextButtonIsClicked, true);
@@ -242,6 +246,8 @@
           var cell = cells[i];
           var cellAngle = theta * i;
           cell.style.transform = rotateFn + '(' + cellAngle + 'deg) translateZ(' + radius + 'px)';
+          cell.id = i; // set the id for on click event listener to use it later
+          cell.addEventListener( 'click', handleCarouselCellIsClicked, true);
       }
     }
 
