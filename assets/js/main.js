@@ -203,4 +203,57 @@
     }
   });
 
+  const SCREEN_WIDTH = window.innerWidth;
+  $(document).ready(function() {
+    var
+          carousel = document.querySelector('.carousel'),
+             cells = carousel.querySelectorAll('.carousel__cell'),
+         cellCount = carousel.childElementCount,
+     selectedIndex = 0,
+         cellWidth = carousel.offsetWidth,
+          rotateFn = 'rotateY',
+     radius, theta = 360 / cellCount,
+        prevButton = document.querySelector('.previous-button'),
+        nextButton = document.querySelector('.next-button');
+
+    function rotateCarousel(carousel, theta, selectedIndex) {
+      var angle = -theta * selectedIndex;
+      carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 
+                                  rotateFn + '(' + angle + 'deg)';
+    }
+    function handleNextButtonIsClicked(e) {
+        e.stopPropagation(); // prevent spin more than needed
+        selectedIndex++;
+        rotateCarousel(carousel, theta, selectedIndex);
+    }
+    function handlePreviousButtonIsClicked(e) {
+        e.stopPropagation(); // prevent spin more than needed
+        selectedIndex--;
+        rotateCarousel(carousel, theta, selectedIndex);
+    }
+
+    prevButton.addEventListener( 'click', handlePreviousButtonIsClicked, true);
+    nextButton.addEventListener( 'click', handleNextButtonIsClicked, true);
+
+    function initialize() {
+      var cellSize = cellWidth;
+      radius = Math.round( ( cellSize / 2) / Math.tan( Math.PI / cellCount ) );
+      for ( var i=0; i < cells.length; i++ ) {
+          var cell = cells[i];
+          var cellAngle = theta * i;
+          cell.style.transform = rotateFn + '(' + cellAngle + 'deg) translateZ(' + radius + 'px)';
+      }
+    }
+
+    initialize();
+    rotateCarousel(carousel, theta, selectedIndex);
+
+    $(window).resize(function(){
+      const needRefresh = Math.abs(window.innerWidth - SCREEN_WIDTH) >= 400;
+      if(needRefresh) {
+        location.reload();
+      }
+    });
+  });
+
 })(jQuery);
