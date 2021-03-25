@@ -223,12 +223,12 @@
     }
     function handleNextButtonIsClicked(e) {
         e.stopPropagation(); // prevent spin more than needed
-        selectedIndex = (selectedIndex + 1) % cellCount;
+        selectedIndex++;
         rotateCarousel(carousel, theta, selectedIndex);
     }
     function handlePreviousButtonIsClicked(e) {
         e.stopPropagation(); // prevent spin more than needed
-        selectedIndex = (selectedIndex - 1) % cellCount;
+        selectedIndex--;
         rotateCarousel(carousel, theta, selectedIndex);
     }
     function handleCarouselCellIsClicked(e) {
