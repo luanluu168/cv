@@ -1073,6 +1073,15 @@ section {
   }
 }
 
+.contact .contact-text {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.contact .container .contact-text:nth-child(2):first-letter {
+  font-size: 200%;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Details
 --------------------------------------------------------------*/
