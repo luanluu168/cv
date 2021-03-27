@@ -1468,20 +1468,29 @@ ul li:nth-child(9) figure .icon span::before {
   margin: 20px 0 0;
 }
 .scene nav button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 0 0 auto;
   margin: 0 10px;
   cursor: pointer;
   color: #333;
   background: none;
   border: 1px solid;
-  border-radius: 3px;
-  letter-spacing: 1px;
-  padding: 5px 10px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding: 0 10px;
 }
 .scene nav button:hover {
-  cursor: pointer;
-  background-color: #6c757d;
+  background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
   color: #fff;
+  animation: moveBackgroundColor 2s ease-out;
+}
+@keyframes moveBackgroundColor {
+  to {
+    background-position:20vw;
+  }
 }
 @media (max-width: 992px) {
   .scene {
