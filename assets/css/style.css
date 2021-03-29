@@ -706,6 +706,11 @@ section {
   color: white;
 }
 
+.portfolio-description ul li::marker {
+  letter-spacing: 2px;
+  color: rgb(0, 255, 76);
+}
+
 @media (max-width: 992px) {
   .portfolio-description {
     font-size: 0.6rem;

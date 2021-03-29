@@ -214,7 +214,8 @@
           rotateFn = 'rotateY',
      radius, theta = 360 / cellCount,
         prevButton = document.querySelector('.previous-button'),
-        nextButton = document.querySelector('.next-button');
+        nextButton = document.querySelector('.next-button'),
+        currentSelectedId = 0;
 
     function rotateCarousel(carousel, theta, selectedIndex) {
       var angle = -theta * selectedIndex;
@@ -224,15 +225,23 @@
     function handleNextButtonIsClicked(e) {
         e.stopPropagation(); // prevent spin more than needed
         selectedIndex++;
+        currentSelectedId = ((selectedIndex % cellCount) + cellCount) % cellCount; // use for handling cell is clicked
         rotateCarousel(carousel, theta, selectedIndex);
     }
     function handlePreviousButtonIsClicked(e) {
         e.stopPropagation(); // prevent spin more than needed
         selectedIndex--;
+        currentSelectedId = ((selectedIndex % cellCount) + cellCount) % cellCount;
         rotateCarousel(carousel, theta, selectedIndex);
     }
     function handleCarouselCellIsClicked(e) {
-        selectedIndex = e.currentTarget.id;
+        if(currentSelectedId == e.currentTarget.id) return;
+        currentSelectedId = e.currentTarget.id;
+        if(e.currentTarget.offsetWidth < e.clientX) { // next item is selected
+          selectedIndex++;
+        } else { // prev item is selected
+          selectedIndex--;
+        }
         rotateCarousel(carousel, theta, selectedIndex);
     }
 
